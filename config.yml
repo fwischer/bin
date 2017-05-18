@@ -1,0 +1,30 @@
+templates:
+  tv_eng:
+    series:
+      720p:
+        - Game of Thrones
+        - Mr Robot
+        - You're the worst
+        - Rick and Morty
+        - Westworld
+        - Last Week Tonight
+        - American Gods
+        - Silicon Valley
+        - Doctor Who
+  tv_ger:
+    series:
+      - Game of Thrones
+    deluge:
+      movedone: "/home/sauger/tv/{{series_name|replace(' ','.')}}.GER/s{{series_season}}/"
+  global:
+    deluge:
+      path: /tmp
+      content_filename: "{{series_name|replace(' ','.')}}.{{series_id}}.{{quality|replace(' ','.')}}"
+# @TODO: replace . by blank. Eg. Mr. Robot -> Mr.Robot ! Mr..Robot
+      movedone: "/home/sauger/tv/{{series_name|replace(' ','.')}}/s{{series_season}}/"
+      username: localclient
+      password: 4a35ed220024904e0ac6221e78965cd2670fae5a
+tasks:
+  baconbits:
+    template: tv_eng
+    rss: https://baconbits.org/feeds.php?feed=torrents_tv&user=24046&auth=90285c24ccd9af3ca0c32eb544f8f45d&passkey=1Fl1TdP1CAqSrwjI0dQDpXh4bkMAXykj&authkey=AqrdB8ej9582fA8pGCV01QrpE2JRavfU
