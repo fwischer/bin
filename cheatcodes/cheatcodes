@@ -1,0 +1,41 @@
+OS X Formatieren die FileVault encrypted sind
+Mit Installer starten (beim start "alt" halten)
+Terminal starten
+diskutil cs list
+diskutil cs delete <UUID>
+OS X Installer erstellen
+OS X Image herunterladen
+/Applications/Install\ OS\ X\ Yosemite.app/Contents/Resources/createinstallmedia --volume /Volumes/Untitled --applicationpath /Applications/Install\ OS\ X\ Yosemite.app --nointeraction
+
+
+HP Switch Firmware Download
+https://h10145.www1.hp.com/Downloads/ProductsList.aspx?lang=en&cc=us&prodSeriesId=3963985
+
+
+Debian join AD
+apt-get install realmd ntp
+sicher gehen, dass die zeit richtig ist
+realm join --user=johannes.matjeschk
+realm list
+sudo/list: %domain\ admins@ad.loyaltysystems.biz
+
+MacBook Resets
+Resetting PRAM
+command + option + P + R druecken.
+Zweiten Reboot Sound abwarten.
+Normal starten.
+Resetting SMC
+shift + control + option + power button
+release
+power button zum normal starten
+MacBook Diagnose
+einschalten; alt + D
+
+
+Time Machine Backup reparieren
+http://tonylawrence.com/2012/08/11/fixing-corrupted-time-machine-backups/
+
+
+Windows 7 Updates reparieren
+https://support.microsoft.com/en-us/kb/3172605
+
