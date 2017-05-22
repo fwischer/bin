@@ -39,3 +39,6 @@ http://tonylawrence.com/2012/08/11/fixing-corrupted-time-machine-backups/
 Windows 7 Updates reparieren
 https://support.microsoft.com/en-us/kb/3172605
 
+Flush DNS
+sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder; say DNS cache flushed 
+
