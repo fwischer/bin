@@ -27,5 +27,4 @@ templates:
 tasks:
   baconbits:
     template: tv_eng
-    test
     rss: https://baconbits.org/feeds.php?feed=torrents_tv&user=24046&auth=90285c24ccd9af3ca0c32eb544f8f45d&passkey=1Fl1TdP1CAqSrwjI0dQDpXh4bkMAXykj&authkey=AqrdB8ej9582fA8pGCV01QrpE2JRavfU
