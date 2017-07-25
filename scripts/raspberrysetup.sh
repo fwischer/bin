@@ -25,9 +25,13 @@ su -c "echo $Key1 >> .ssh/authorized_keys" $USERMOD
 su -c "echo $Key2 >> .ssh/authorized_keys" $USERMOD
 su -c "chmod -R go-rwx .ssh" $USERMOD
 
+#Updating and installing programms needed for Kioskmode
+
 apt-get -y update
 echo "q" | apt-get -y upgrade
 apt-get install -y x11-xserver-utils unclutter ntp ntpdate tightvncserver cron-apt bash-completion vim x11vnc cec-utils xinetd
+
+#Installing Chromium for Pi
 
 wget http://ftp.us.debian.org/debian/pool/main/libg/libgcrypt11/libgcrypt11_1.5.0-5+deb7u4_armhf.deb
 dpkg -i libgcrypt11_1.5.0-5+deb7u4_armhf.deb
@@ -47,6 +51,8 @@ rm check-mk-agent_1.2.6p12-1_all.deb
 
 apt-get dist-upgrade -f -y
 
+#adding NTP server and deleting the old ones
+
 sed -i '10idisable_overscan=1' /boot/config.txt
 sed -i '29ihdmi_group=1' /boot/config.txt
 sed -i '31ihdmi_mode=16' /boot/config.txt
@@ -56,6 +62,7 @@ sed -i '/server 2.debian.pool.ntp.org iburst/d' /etc/ntp.conf
 sed -i '/server 3.debian.pool.ntp.org iburst/d' /etc/ntp.conf
 sed -e s/-d//g -i /etc/cron-apt/action.d/3-download
 
+#adding Autostart for VNC
 
 su -c "mkdir -p ~/.config/autostart" $USERMOD
 su -c "echo    '[Desktop Entry]
@@ -67,6 +74,8 @@ Exec=x11vnc -forever -usepw -display :0 -ultrafilexfer
 StartupNotify=false
 Terminal=false
 Hidden=false' > ~/.config/autostart/x11vnc.desktop" $USERMOD
+
+#adding chromium Sites 
 
 su -c "echo '@lxpanel --profile LXDE-pi
 @pcmanfm --desktop --profile LXDE-pi
