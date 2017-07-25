@@ -22,7 +22,7 @@ dpkg-reconfigure locales
 su -c "mkdir -p .ssh/" $USERMOD
 su -c "touch .ssh/authorized_keys" $USERMOD
 su -c "echo $Key1 >> .ssh/authorized_keys" $USERMOD
-su -c "echo $Key22 >> .ssh/authorized_keys" $USERMOD
+su -c "echo $Key2 >> .ssh/authorized_keys" $USERMOD
 su -c "chmod -R go-rwx .ssh" $USERMOD
 
 apt-get -y update
