@@ -5,8 +5,8 @@
 # give the PI a Hostname at the end of the script and give him the right locale at the start.
 # 22.06.2017
 
-KeyF="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCdW2sN7oIMTU5LCFgKoMxRX3sbDUgU3O17IIjrvmo9/hp9EvNRk6ZXVsKO5Ym+IqHkDwZYqgsPN060Lh14NK3IZlUv1GubjbLCao5uqpSdcVH+JKhCRBIZdNav3M3aj2Wcd0Y9DL3rKFCRlNi7/DklHerpDmpAStcPzbfXIuwaxgl+6GdILz4dWTpC3sMHWlCN0I0gVxil5uHU9WMlz+wwv7jxQUA0cXlHMt658zLjtJrW0JjbYK5em3u3te8mexpVDbtdUy7mfgGChQaMbz9YfliUdx8JQ0KAyIZ8c5tUIifAoCiiIahWV9SaEOL3+Cegy+GFwh4U+7EV/VJRnIX95SFy89ghfDkap6KgOVVAjxbUZo8BlF+siGkxmyHiiWOVTPd+SDSIqpvzLjxSe45BUdkAGQbjwBhT4fqCZET493aBBXnN4owM81MYN1/G5Z5R8xD1bX65+oBLOy2fkKc/RAeTjiaIyvUC4zLKmqvQFSFh8AHrP4gDsM//ckcjfogFqLVwKYTuJU2JpUmBiriv3tppNjk1bH6Odo0Yh6QtTlT5kEz0bY+QGsF1MdWEpCiAdda8iDIFLNMYteLiHVTAXqrgkTxgYoppLTDBFCjm9ghbxLILYQWFQoIhcr/KrnMZzB2qk45BOB2bzhfuEN7MeUgp/h56+uKS8+LOE0nr0w== florian.wischer@magicline.de" 
-KeyJ="5olwB/WrUC4HZEW0YTYTaV3d5t333AX7orPuPhi3GSyw8uFplx8986P3jx2l9gYAYkzmiAe5ivzdP7xcHikAB2A7HVCRpxtMpdDNgTl+cEhQ3tSIowJ5TSzeK4ntmShrWg1nZ3kp4nkn0w8qjDyLevdrkbZPVZ+tITgIUxa3dtRQ7g5Ih4APNI57ccOwEKgwnmNzXNiOokk9M88cx43yVJ9SFpD5WRbWu1vzk8JwJVanlqCeXgBK7BrDP03PZ6jSYu9KkAeZT2hlVwBICFt Johannes Matjeschk"
+Key1="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCdW2sN7oIMTU5LCFgKoMxRX3sbDUgU3O17IIjrvmo9/hp9EvNRk6ZXVsKO5Ym+IqHkDwZYqgsPN060Lh14NK3IZlUv1GubjbLCao5uqpSdcVH+JKhCRBIZdNav3M3aj2Wcd0Y9DL3rKFCRlNi7/DklHerpDmpAStcPzbfXIuwaxgl+6GdILz4dWTpC3sMHWlCN0I0gVxil5uHU9WMlz+wwv7jxQUA0cXlHMt658zLjtJrW0JjbYK5em3u3te8mexpVDbtdUy7mfgGChQaMbz9YfliUdx8JQ0KAyIZ8c5tUIifAoCiiIahWV9SaEOL3+Cegy+GFwh4U+7EV/VJRnIX95SFy89ghfDkap6KgOVVAjxbUZo8BlF+siGkxmyHiiWOVTPd+SDSIqpvzLjxSe45BUdkAGQbjwBhT4fqCZET493aBBXnN4owM81MYN1/G5Z5R8xD1bX65+oBLOy2fkKc/RAeTjiaIyvUC4zLKmqvQFSFh8AHrP4gDsM//ckcjfogFqLVwKYTuJU2JpUmBiriv3tppNjk1bH6Odo0Yh6QtTlT5kEz0bY+QGsF1MdWEpCiAdda8iDIFLNMYteLiHVTAXqrgkTxgYoppLTDBFCjm9ghbxLILYQWFQoIhcr/KrnMZzB2qk45BOB2bzhfuEN7MeUgp/h56+uKS8+LOE0nr0w== florian.wischer@magicline.de" 
+Key2="5olwB/WrUC4HZEW0YTYTaV3d5t333AX7orPuPhi3GSyw8uFplx8986P3jx2l9gYAYkzmiAe5ivzdP7xcHikAB2A7HVCRpxtMpdDNgTl+cEhQ3tSIowJ5TSzeK4ntmShrWg1nZ3kp4nkn0w8qjDyLevdrkbZPVZ+tITgIUxa3dtRQ7g5Ih4APNI57ccOwEKgwnmNzXNiOokk9M88cx43yVJ9SFpD5WRbWu1vzk8JwJVanlqCeXgBK7BrDP03PZ6jSYu9KkAeZT2hlVwBICFt Johannes Matjeschk"
 
 USERMOD='-s /bin/sh pi'
 
@@ -21,8 +21,8 @@ dpkg-reconfigure locales
 
 su -c "mkdir -p .ssh/" $USERMOD
 su -c "touch .ssh/authorized_keys" $USERMOD
-su -c "echo $KeyF >> .ssh/authorized_keys" $USERMOD
-su -c "echo $KeyJ >> .ssh/authorized_keys" $USERMOD
+su -c "echo $Key1 >> .ssh/authorized_keys" $USERMOD
+su -c "echo $Key22 >> .ssh/authorized_keys" $USERMOD
 su -c "chmod -R go-rwx .ssh" $USERMOD
 
 apt-get -y update
