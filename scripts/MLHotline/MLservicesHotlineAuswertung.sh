@@ -7,7 +7,7 @@
 #set -x
 
 # Mysql Access
-mysqlCmd="/usr/bin/mysql -N -uroot -postsee -e"
+mysqlCmd="/usr/bin/mysql -N -uroot -ppw -e"
 
 # Get dates and time
 currentDate="$(date +%Y-%m-%d)"
