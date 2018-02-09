@@ -27,3 +27,9 @@ If everything is OK, write the new partition table to the disk (W) and exit (Q).
 Now that you have your new, empty partition, you can create its filesystem. So, if you just created /dev/sdaX (where X is the number of the partition you created, for example /dev/sda2), run this:
 
 sudo mkfs.ext4 /dev/sdaX
+
+#no reboot
+echo 1 > /sys/block/sda/device/rescan
+fdisk /dev/sda
+partprobe /dev/sda
+resize2fs /dev/sda1

@@ -42,3 +42,5 @@ https://support.microsoft.com/en-us/kb/3172605
 Flush DNS
 sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder; say DNS cache flushed 
 
+Hyper-V CLI
+http://techgenix.com/administer-microsoft-hyper-v-command-line-cli/
