@@ -1,0 +1,13 @@
+#!/bin/bash
+
+datum=$(date +%Y-%m-%d)
+
+echo Subject: Daily new Series $datum
+flexget series list |grep '>' |head -n -1 
+COUNT='flexget series list |grep > |head -n -1 | wc -l'
+$COUNT
+	if [ $COUNT = 0 ]; then
+		echo "Keine neuen Serien"
+		else
+		echo "Enjoy your series"
+	fi
